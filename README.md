@@ -13,8 +13,8 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-👋 Hi, I am Sardorkhon Tursunkhodjaev
-💻 I am interested in programming (especially in Back-end)
-✔ I am learning JavaScript, Node js and related frameworks
-😄 I’m looking to collaborate on different startup projects
-📫 How to reach me: https://t.me/tursunkhodjaev_s
+- 👋 Hi, I am Sardorkhon Tursunkhodjaev
+- 💻 I am interested in programming (especially in Back-end)
+- ✔ I am learning JavaScript, Node js and related frameworks
+- 😄 I’m looking to collaborate on different startup projects
+- 📫 How to reach me: https://t.me/tursunkhodjaev_s
