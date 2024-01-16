@@ -7,4 +7,9 @@ export default defineConfig({
   commonjsOptions: {
     esmExternals: true,
   },
+  build: {
+    rollupOptions: {
+      external: ['@vercel/speed-insights/next'],
+    },
+  }
 });
