@@ -6,6 +6,7 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import axios from "axios";
 
 const Contact = () => {
   const formRef = useRef();
@@ -31,46 +32,22 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
+    axios.post(
+      "https://api.telegram.org/bot6794334273:AAEuK_roYR1mTyplKWPWlfZqkfDacWZcFCw/sendMessage",
+      {
+        chat_id: -4128488199,
+        text: `Name: ${form.name}\nEmail: ${form.email}\nMessage: ${form.message}`,
+        parse_mode: "Markdown",
+      },
+    );
+
     alert("Thank you. I will get back to you as soon as possible.");
     setLoading(false);
     setForm({
-        name: "",
-        email: "",
-        message: "",
-        });
-
-
-    // emailjs
-    //   .send(
-    //     import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-    //     import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-    //     {
-    //       from_name: form.name,
-    //       to_name: "JavaScript Mastery",
-    //       from_email: form.email,
-    //       to_email: "sujata@jsmastery.pro",
-    //       message: form.message,
-    //     },
-    //     import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
-    //   )
-    //   .then(
-    //     () => {
-    //       setLoading(false);
-    //       alert("Thank you. I will get back to you as soon as possible.");
-    //
-    //       setForm({
-    //         name: "",
-    //         email: "",
-    //         message: "",
-    //       });
-    //     },
-    //     (error) => {
-    //       setLoading(false);
-    //       console.error(error);
-    //
-    //       alert("Ahh, something went wrong. Please try again.");
-    //     },
-    //   );
+      name: "",
+      email: "",
+      message: "",
+    });
   };
 
   return (
@@ -96,7 +73,7 @@ const Contact = () => {
               name="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="What's your good name?"
+              placeholder="How can i call you?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
@@ -107,7 +84,7 @@ const Contact = () => {
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="What's your web address?"
+              placeholder="What is your email?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
@@ -118,7 +95,7 @@ const Contact = () => {
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="What you want to say?"
+              placeholder="What would you like say to me?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>

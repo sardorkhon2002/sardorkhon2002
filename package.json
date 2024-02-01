@@ -13,6 +13,7 @@
     "@react-three/drei": "^9.93.0",
     "@react-three/fiber": "^8.15.14",
     "@vercel/speed-insights": "^1.0.3",
+    "axios": "^1.6.7",
     "d3-random": "^3.0.1",
     "framer-motion": "^10.18.0",
     "maath": "^0.10.7",
